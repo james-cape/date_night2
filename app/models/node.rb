@@ -1,10 +1,12 @@
 class Node
-  attr_reader :value
+  attr_reader :score
+  attr_reader :title
   attr_accessor :left
 
-  def initialize(value = nil)
-    @value = value
-    left = nil
-    right = nil
+  def initialize(score = nil, title = nil)
+    @score = score
+    @title = title
+    @left = nil
+    @right = nil
   end
 end
