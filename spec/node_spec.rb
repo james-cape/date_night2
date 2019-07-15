@@ -16,6 +16,8 @@ RSpec.describe Node do
       expect(node.title).to eq("Bill & Ted's Excellent Adventure")
     end
 
+
+
     # it "can be created some score and left/right assignment" do
     #   node_0 = Node.new(0)
     #   node_1 = Node.new(1)

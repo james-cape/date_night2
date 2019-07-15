@@ -6,10 +6,29 @@ class BinarySearchTree
   end
 
 
-  def insert(score, title)
-    new_node = Node.new(score, title)
+  # def insert(score, title)
+  #   new_node = Node.new(score, title)
+  #
+  #
+  #   if @root_node.root_node.nil?
+  #     @root_node.root_node = Node.new(score, title)
+  #   else
+  #     @root_node.root_node.insert(score, title)
+  #   end
+  # end
 
-    # if new_node.score ==
+  def insert(score, title)
+    if @root_node.score.nil?
+      @root_node = Node.new(score, title)
+    else
+
+      if score <= @root_node.score
+        @root_node.left.nil? ? @root_node.left = Node.new(score, title) : @root_node.left.insert(score, title)
+      elsif score > @root_node.score
+        @root_node.right.nil? ? @root_node.right = Node.new(score, title) : @root_node.right.insert(score, title)
+      end
+
+    end
   end
 
 end
