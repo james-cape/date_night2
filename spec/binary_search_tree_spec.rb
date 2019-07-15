@@ -9,9 +9,10 @@ RSpec.describe BinarySearchTree do
     end
 
     it "initializes with some score root node" do
-      tree = BinarySearchTree.new(0)
+      tree = BinarySearchTree.new(61, "Bill & Ted's Excellent Adventure")
 
-      expect(tree.root_node.score).to eq(0)
+      expect(tree.root_node.score).to eq(61)
+      expect(tree.root_node.title).to eq("Bill & Ted's Excellent Adventure")
     end
   end
 

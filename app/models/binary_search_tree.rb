@@ -1,8 +1,8 @@
 class BinarySearchTree
 
   attr_accessor :root_node
-  def initialize(root_score = nil)
-    @root_node = Node.new(root_score)
+  def initialize(score = nil, title = nil)
+    @root_node = Node.new(score, title)
   end
 
 
