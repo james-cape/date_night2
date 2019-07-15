@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Tree do
+RSpec.describe BinarySearchTree do
   describe "tree can be build with nodes" do
     it "initializes with nil value root node" do
-      tree = Tree.new
+      tree = BinarySearchTree.new
 
       expect(tree.root_node.value).to eq(nil)
     end
 
     it "initializes with some value root node" do
-      tree = Tree.new(0)
+      tree = BinarySearchTree.new(0)
 
       expect(tree.root_node.value).to eq(0)
     end

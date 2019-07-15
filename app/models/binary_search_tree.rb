@@ -1,4 +1,4 @@
-class Tree
+class BinarySearchTree
 
   attr_accessor :root_node
   def initialize(root_value = nil)
