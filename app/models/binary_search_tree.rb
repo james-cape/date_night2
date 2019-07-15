@@ -5,30 +5,47 @@ class BinarySearchTree
     @root_node = Node.new(score, title)
   end
 
-
-  # def insert(score, title)
-  #   new_node = Node.new(score, title)
-  #
-  #
-  #   if @root_node.root_node.nil?
-  #     @root_node.root_node = Node.new(score, title)
-  #   else
-  #     @root_node.root_node.insert(score, title)
-  #   end
-  # end
-
   def insert(score, title)
+    depth = 0
+
     if @root_node.score.nil?
       @root_node = Node.new(score, title)
     else
+      top_node = @root_node
 
-      if score <= @root_node.score
-        @root_node.left.nil? ? @root_node.left = Node.new(score, title) : @root_node.left.insert(score, title)
-      elsif score > @root_node.score
-        @root_node.right.nil? ? @root_node.right = Node.new(score, title) : @root_node.right.insert(score, title)
-      end
+      # if top_node.left.nil? && top_node.right.nil?
+
+        if score <= top_node.score
+          depth += 1
+
+          if top_node.left.nil?
+            top_node.left = Node.new(score, title)
+          else
+            require 'pry'; binding.pry
+            top_node.left.insert(score, title)
+          end
+
+        elsif score > top_node.score
+          depth += 1
+
+          if top_node.right.nil?
+            top_node.right = Node.new(score, title)
+          else
+            top_node.right.insert(score, title)
+          end
+
+        end
+      # end
 
     end
+    depth
   end
+
+  # def depth_of(proposed_score)
+  #   return 0 if @root_node.nil?
+  #
+  #   left_height = depth_of()
+  #
+  # end
 
 end
